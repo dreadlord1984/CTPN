@@ -7,7 +7,7 @@ The codes are used for implementing CTPN for scene text detection, described in:
 Online demo is available at: [textdet.com](http://textdet.com)
 
 These demo codes (with our trained model) are for text-line detection (without 
-side-refiement part).
+side-refinement part).
 
 # Required hardware
 You need a GPU. If you use CUDNN, about 1.5GB free memory is required. If you don't use CUDNN, you will need about 5GB free memory, and the testing time will slightly increase. Therefore, we strongly recommend to use CUDNN.
@@ -34,6 +34,12 @@ Python2.7, cython and all what Caffe depends on.
 4. Now, be sure you are in the root directory of the codes. Run `make` to compile some cython files.
 
 5. Run `python tools/demo.py` for a demo. Or `python tools/demo.py --no-gpu` to run it under CPU mode.
+
+# How to use other Caffe
+If you may want to use other Caffe instead of the one we ship for some reasons, you need to migrate the following layers into the Caffe.
+* Reverse
+* Transpose
+* Lstm
 
 # License
 The codes are released under the MIT License.
